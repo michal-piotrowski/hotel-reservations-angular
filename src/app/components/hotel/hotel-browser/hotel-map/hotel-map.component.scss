@@ -1,0 +1,28 @@
+@import 'styles.scss'; 
+
+#leaflet-map {
+  width:100%;
+  height:60vh;
+  margin-bottom: 3em;
+  box-shadow: 0 0 5px 1px #888888;
+}
+
+#leaflet-wrapper {
+  padding:1em 3em;
+  
+}
+
+#search-input {
+  border-radius: 7px;
+  border: 2.3px solid #4654CF;
+}
+
+#leaflet-results-list {
+  margin-left:20px
+}
+
+@include media-breakpoint-down(sm) {
+  #leaflet-map {
+    height:60vh;
+  } 
+ }

@@ -1,0 +1,141 @@
+$body-bg:  #111C7B; // overwritten bootstrap variable
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "~leaflet/dist/leaflet.css";
+// hotel-reservations look and feel:
+$body-bg:  #111C7B; // overwritten bootstrap variable
+$map-wrapper-bg-color: #E1E1E1;
+$map-container-bg-color: #F5F5F5;
+
+//---------------btn-primary
+.btn-primary {
+  background-color: #1525AF ;
+  border:2px solid #1525AF;
+  padding: 0 2em ; 
+  line-height: 2;
+  font-weight:500 ;
+}
+.btn-primary:hover {
+  background-color: #eaae13;
+  border: 2px solid #eaae13;
+}
+.btn-primary:focus {
+  background-color: #2234d6;
+  
+}
+.btn-primary:not(:disabled):not(.disabled):hover:focus {
+  background-color: #eaae13;
+  border: 2px solid #eaae13;
+}
+.btn-primary:not(:disabled):not(.disabled):hover:focus:active {
+  background-color: #ffdd6c;
+  border: 2px solid #ffdd6c;
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #ffdd6c;
+  border: 2px solid #ffdd6c;
+}
+
+//------------------ btn-secondary
+.btn-secondary {
+  color: #1525AF;
+  border: 2px solid #1525AF ; 
+  background-color: #F5F5F5;
+  line-height: 2;
+  padding: 0 2em ; 
+  font-weight:500 ;
+}
+.btn-secondary:hover {
+  border: 2px solid #eaae13;
+  color: #eaae13 ;
+  background-color: #F5F5F5;
+}
+.btn-secondary:focus {
+  background-color: #F5F5F5;
+  border: 2px solid #eaae13;
+  color:#eaae13
+}
+.btn-secondary:not(:disabled):not(.disabled):hover:focus {
+  background-color: #F5F5F5;
+  border: 2px solid #eaae13;
+  color:#eaae13;
+
+}
+.btn-secondary:not(:disabled):not(.disabled):hover:focus:active {
+  border: 2px solid #ffdd6c;
+  color:#eaae13;
+}
+.btn-secondary:not(:disabled):not(.disabled):active {
+  border: 2px solid #ffdd6c;
+  color:#eaae13;
+}
+
+body {
+  margin: 0px !important;
+}
+
+.component-wrapper {
+  background-color: $map-wrapper-bg-color;
+  padding: 1.6vw;
+}
+
+.component-container {
+  background-color:  $map-container-bg-color;
+  padding:30px 0;
+  max-width: none;
+  border-radius:12.5px;
+  width: 45%;
+  min-width: 20em;
+}
+
+.hr-row {
+  margin: 5px 50px 15px 50px;
+}
+
+@font-face {
+  font-family: "Commissioner";
+  src: url("./assets/Commissioner/Commissioner-Regular.ttf");
+}
+@font-face {
+  font-family: "Commissioner-Medium";
+  src: url("./assets/Commissioner/Commissioner-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Commissioner-Light";
+  src: url("./assets/Commissioner/Commissioner-Light.ttf");
+}
+
+@font-face {
+  font-family: "Patua-One";
+  src: url("./assets/Patua_One/PatuaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Palanquin-Dark";
+  src: url("./assets/Palanquin_dark/PalanquinDark-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Open-Sans-Italic";
+  src: url("./assets/Open_Sans/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("./assets/Lato2OFL/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-medium";
+  src: url("./assets/Lato2OFL/Lato-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Passion-One";
+  src: url("./assets/Passion_One/PassionOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/Poppins/Poppins-Medium.ttf");
+}
