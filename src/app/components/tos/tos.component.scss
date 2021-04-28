@@ -1,0 +1,13 @@
+@import 'styles.scss';
+
+.tos-card {
+  width:100%;
+  display: flex;
+  box-shadow: $hr-box-shadow;
+  border-radius: 3px;
+  padding:1.8em 5% 1.8em 5%;
+  &.header {
+    justify-content: center;
+    margin-bottom: 1.2em
+  }
+}

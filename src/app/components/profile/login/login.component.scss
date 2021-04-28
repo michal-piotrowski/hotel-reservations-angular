@@ -32,12 +32,16 @@
   padding:0 10px;
   margin-bottom: 10px;
 }
-
+#login-inter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+}
 #login-spacer-left {
     width: 28vw;
     display: flex;
     float: left;
-    height: 60vw;
 }
 
 #login-component-wrapper {

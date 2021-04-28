@@ -1,0 +1,20 @@
+@import 'styles.scss';
+
+#hotel-content {
+  border-radius: 12.5px;
+  border: 2px solid $hr-dark-blue;
+  box-shadow: $hr-box-shadow;
+  margin: 0 2em;
+  padding:2em;
+}
+
+.book-button {
+  
+}
+
+
+#book-wrapper { 
+  margin-top:1rem;
+  height:2.4rem;
+  width:100%;
+}
