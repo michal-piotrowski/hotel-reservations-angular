@@ -8,19 +8,23 @@ import { SliderComponent } from './landing-page/slider/slider.component';
 import { HotelSearchComponent } from './hotel/hotel-browser/hotel-search/hotel-search.component';
 import { HotelMapComponent } from './hotel/hotel-browser/hotel-map/hotel-map.component';
 import { HotelListComponent } from './hotel/hotel-browser/hotel-list/hotel-list.component';
-import { Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '../pipes/translate-pipe';
 import { LoginComponent } from './profile/login/login.component';
 import { BookingComponent } from './hotel/booking/booking.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { TosComponent } from './tos/tos.component';
+import { SuggestionsComponent } from './inputWithSuggestions/suggestions.component';
+import { reducers } from '../store/store';
+import { StoreModule } from '@ngrx/store';
+import { AsyncPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
+    SuggestionsComponent,
     HrRootComponent,
     NavbarComponent,
-    // SliderComponent,
+    SliderComponent,
     HotelSearchComponent,
     HotelMapComponent,
     TranslatePipe,
@@ -29,13 +33,15 @@ import { TosComponent } from './tos/tos.component';
     BookingComponent,
     ProfileComponent,
     TosComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    StoreModule.forRoot(reducers)
   ],
-  providers: [],
+  providers: [AsyncPipe],
   bootstrap: [HrRootComponent]
 })
 export class AppModule { }

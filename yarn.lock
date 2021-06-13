@@ -1157,6 +1157,20 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/effects@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-12.1.0.tgz#316e60950a5e2c8ca2ecb3119397281affe3a286"
+  integrity sha512-DcVovaJB9hZ8qo5UNjRS0KqLaMX8YreuR3EtRPUysB0aePBuoWQiN8HUic8DgmI2cN3KcZxOsRKj/1VaVArLJw==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/store@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-12.0.0.tgz#398c703b14a7c78a9bc616d6a569be17a606f803"
+  integrity sha512-aH6Neu+J6kmvYU1ns+fmEn3MKm3p33xVdv8qkWgk77pngDHaRENdThV+KorACkaYEWV2X2yAoKzE7s9XQVxEgQ==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@10.1.7":
   version "10.1.7"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-10.1.7.tgz#0778473a92f49ba72a56167104dcfb26ed7cebb0"
@@ -1258,6 +1272,11 @@
   integrity sha512-ltv5jR+VjKSMtoDkxH61Rsbo0zLU7iqyOXpVPkAX4F+79fg2eymC7t0msWsfNaEZO1FGTIQATCCCQe+ijWoicg==
   dependencies:
     "@types/geojson" "*"
+
+"@types/lodash@^4.14.170":
+  version "4.14.170"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.170.tgz#0d67711d4bf7f4ca5147e9091b847479b87925d6"
+  integrity sha512-bpcvu/MKHHeYX+qeEN8GE7DIravODWdACVA1ctevD8CN24RhPZIKMn9ntfAsrvLfSX3cR5RrBKAbYm9bGs0A+Q==
 
 "@types/minimatch@*":
   version "3.0.3"

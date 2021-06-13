@@ -7,7 +7,8 @@ import { LoginComponent } from './profile/login/login.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { TosComponent } from './tos/tos.component';
 
-const routes: Routes = [
+
+export const routes: Routes = [
   { path: '', component: SliderComponent},
   { path: 'results/:id', component: BookingComponent },
   { path: 'results', component: HotelMapComponent },

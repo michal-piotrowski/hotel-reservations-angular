@@ -1,0 +1,42 @@
+@import 'styles.scss';
+
+#suggestion-list-wrapper {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+#landing-where-input {
+  border:none;
+  width:calc(100% - 5em);
+  height:2.8em;
+  font-family: 'Open-Sans-Italic';
+}
+
+li.suggestion-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-bottom: 0.3em;
+  cursor: default;
+}
+
+li.suggestion-text:nth-child(2n) {
+  background-color: #eeeeee;
+}
+
+li.highlightable:hover {
+  background-color: $hr-hover-btn-color;
+}
+
+#result-list {
+  width: 100%;
+  background-color: white;
+  font-size: 10pt;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  list-style-type: none;
+  box-shadow: 0 0 2px 0.3px;
+  top: 1px;
+}

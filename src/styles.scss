@@ -8,7 +8,10 @@ $map-wrapper-bg-color: #E1E1E1;
 $map-container-bg-color: #F5F5F5;
 $hr-dark-blue: #1525AF;
 $hr-box-shadow: 0 0 5px 1px #0000004d;
+$hr-hover-btn-color: #eaae13;
+$hr-hover-focus-btn-color: #ffdd6c;
 //---------------btn-primary
+$paragraph-margin-bottom: none;
 .btn-primary {
   background-color: $hr-dark-blue ;
   border:2px solid $hr-dark-blue;
@@ -18,24 +21,24 @@ $hr-box-shadow: 0 0 5px 1px #0000004d;
   font-weight:500 ;
 }
 .btn-primary:hover {
-  background-color: #eaae13;
-  border: 2px solid #eaae13;
+  background-color: $hr-hover-btn-color;
+  border: 2px solid $hr-hover-btn-color;
 }
 .btn-primary:focus {
   background-color: #2234d6;
   
 }
 .btn-primary:not(:disabled):not(.disabled):hover:focus {
-  background-color: #eaae13;
-  border: 2px solid #eaae13;
+  background-color: $hr-hover-btn-color;
+  border: 2px solid $hr-hover-btn-color;
 }
 .btn-primary:not(:disabled):not(.disabled):hover:focus:active {
-  background-color: #ffdd6c;
-  border: 2px solid #ffdd6c;
+  background-color: $hr-hover-focus-btn-color;
+  border: 2px solid $hr-hover-focus-btn-color;
 }
 .btn-primary:not(:disabled):not(.disabled):active {
-  background-color: #ffdd6c;
-  border: 2px solid #ffdd6c;
+  background-color: $hr-hover-focus-btn-color;
+  border: 2px solid $hr-hover-focus-btn-color;
 }
 
 //------------------ btn-secondary
@@ -49,28 +52,28 @@ $hr-box-shadow: 0 0 5px 1px #0000004d;
   font-weight:500 ;
 }
 .btn-secondary:hover {
-  border: 2px solid #eaae13;
-  color: #eaae13 ;
+  border: 2px solid $hr-hover-btn-color;
+  color: $hr-hover-btn-color ;
   background-color: #F5F5F5;
 }
 .btn-secondary:focus {
   background-color: #F5F5F5;
-  border: 2px solid #eaae13;
-  color:#eaae13
+  border: 2px solid $hr-hover-btn-color;
+  color:$hr-hover-btn-color
 }
 .btn-secondary:not(:disabled):not(.disabled):hover:focus {
   background-color: #F5F5F5;
-  border: 2px solid #eaae13;
-  color:#eaae13;
+  border: 2px solid $hr-hover-btn-color;
+  color:$hr-hover-btn-color;
 
 }
 .btn-secondary:not(:disabled):not(.disabled):hover:focus:active {
-  border: 2px solid #ffdd6c;
-  color:#eaae13;
+  border: 2px solid $hr-hover-focus-btn-color;
+  color:$hr-hover-btn-color;
 }
 .btn-secondary:not(:disabled):not(.disabled):active {
-  border: 2px solid #ffdd6c;
-  color:#eaae13;
+  border: 2px solid $hr-hover-focus-btn-color;
+  color:$hr-hover-btn-color;
 }
 
 body {
