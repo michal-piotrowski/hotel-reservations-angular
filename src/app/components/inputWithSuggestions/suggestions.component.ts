@@ -6,9 +6,14 @@ import Suggestion from 'src/app/pojo/Suggestion';
   selector: 'app-suggestions',
   template: `
     <div :style="containerStyle">
-    <input #suggestionsInput (blur)="delayHideCollection" (input)="handleInput" id="landing-where-input" [placeholder]="placeholder" [style]="inputStyle" class="form-control" autocomplete="off">
-    <div id="suggestion-list-wrapper">
-      <ul *ngIf="showList()" #results id="result-list">
+    <input #suggestionsInput id="landing-where-input" class="form-control" autocomplete="off"
+      (blur)="delayHideCollection"
+      (input)="handleInput"
+      [value]="value"
+      [placeholder]="placeholder"
+      [style]="inputStyle">
+    <div  *ngIf="showList()" id="suggestion-list-wrapper">
+      <ul #results id="result-list">
         <li *ngFor="let suggestion of collection"
           (click)="suggestionClicked(suggestion)"
           [class]="['suggestion-text', isSelectable(suggestion) ? 'highlightable' : '']" 
@@ -27,9 +32,9 @@ export class SuggestionsComponent implements OnInit, OnChanges{
   shouldShowCollection: Boolean = true;
   highlightPosition: 0;
 
+  @Input() value = null;
   @Input() containerStyle = null;
   @Input() placeholder = null;
-  @Input() mapperFunction: Function;
   @Input() selected = null;
   @Input() inputStyle = null;
   @Input() collection: [] = null;
@@ -44,8 +49,13 @@ export class SuggestionsComponent implements OnInit, OnChanges{
     console.log(arg1);
   }
   @ViewChild('suggestionsInput') suggestionsInputRef;
+  @ViewChild('results') resultsRef;
 
   showList() {
+    const shouldShow = !isEmpty(this.collection) && this.suggestionsInputRef.nativeElement.value && this.shouldShowCollection;
+    if (shouldShow && this.resultsRef) {
+      this.resultsRef.nativeElement.focus()
+    }
     return !isEmpty(this.collection) && this.suggestionsInputRef.nativeElement.value && this.shouldShowCollection;
   }
   delayHideCollection() {

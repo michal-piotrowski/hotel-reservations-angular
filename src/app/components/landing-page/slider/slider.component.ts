@@ -1,8 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-// import {eventNames} from 'app/store/eventNames.js';
 // import { names as storeNames, formFields } from '../../../store/store';
 import { debounce } from 'lodash';
-import { FETCH_SUGGESTIONS, HrState, selectors, ISuggestions, CLEAR_COLLECTION, PUT_LOCATION_FORM_DATA, FormFields, IFormFields } from '../../../store/store';
+import { FETCH_SUGGESTIONS, HrState, selectors, ISuggestions, CLEAR_COLLECTION, PUT_LOCATION_FORM_DATA, FormFields, IFormFields, SET_FETCHED_DESTINATIONS, SEARCH_DESTINATIONS } from '../../../store/store';
 import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import RouterNames from '../../routerNames';
@@ -27,13 +26,13 @@ import Suggestion from 'src/app/pojo/Suggestion';
           <!-- below syntax: async is an angular pipe which subscribes to hrState$ (also unsubscribes when component dies ).-->
           <!-- When it resolves, returns our domain object. In this case, the hrState array. -->
           <app-suggestions
-            style="height:100%"
+            [collection]="(hrState$ | async) && (hrState$ | async).suggestions"
+            (locationSelected)="handleLocationSelected($event)"
+            style="height:100%; width: calc(100% - 2.8em)"
             #searchSuggestions
             [inputStyle]="'position: relative; z-index: 2; height:100%; width:100%; font-size:10pt'"
-            (locationSelected)="handleLocationSelected($event)"
             (input)="queryMatching($event.target.value)"
             [containerStyle]="'width: calc(100% - 2.8em)'"
-            [collection]="(hrState$ | async) && (hrState$ | async).suggestions"
             [placeholder]="'Your searched location'">
           </app-suggestions>
         </div>
@@ -68,7 +67,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.store)
-    this.hrState$ = this.store.pipe(select(selectors.select));
+    this.hrState$ = this.store.pipe(select(selectors.state));
   }
 
   hrState$: Observable<HrState>;
@@ -77,7 +76,7 @@ export class SliderComponent implements OnInit {
   isIdle: Boolean = true; 
 
   handleLocationSelected(suggestion: Suggestion) {
-    this.store.dispatch(PUT_LOCATION_FORM_DATA({formFieldsValue: new FormFields(suggestion && suggestion.display_name)}));
+    this.store.dispatch(PUT_LOCATION_FORM_DATA({formFieldsValue: new FormFields(suggestion)}));
     this.clearCollection();
   }
   handleDateFromSelected(event) {
@@ -91,6 +90,7 @@ export class SliderComponent implements OnInit {
   }  
   searchHotels() {
     this.router.navigateByUrl(RouterNames.RESULTS);
+    this.store.dispatch(SEARCH_DESTINATIONS());
   }
   debouncedQueryMatch = debounce(function (value, vm) {
     vm.store.dispatch(FETCH_SUGGESTIONS({ userText: value }));
