@@ -14,7 +14,7 @@ import { FetchingState, HrState, selectors } from 'src/app/store/store';
     <div ></div>
     <ng-template #hotel_list>
       <div id="hotel-list-wrapper">
-        <app-hotel-summary *ngFor="let hotelSummary of ($fetchedDestinations | async); let ind = index" [hotelSummary]="hotelSummary" [arrayPos]="ind">
+        <app-hotel-summary *ngFor="let hotelSummary of (fetchedDestinations$ | async); let ind = index" [hotelSummary]="hotelSummary" [arrayPos]="ind">
         </app-hotel-summary>
       </div>
     </ng-template>
@@ -22,19 +22,17 @@ import { FetchingState, HrState, selectors } from 'src/app/store/store';
 })
 export class HotelListComponent implements OnInit {
 
-  $fetchedDestinations: Observable<any>;
-  $fetchingState: Observable<any>;
+  fetchedDestinations$: Observable<any>;
+  fetchingState$: Observable<any>;
   fetchingState: FetchingState = FetchingState.DONE;
 
   constructor(private store: Store<HrState>, private asyncPipe: AsyncPipe) {
-    this.$fetchingState = this.store.pipe(select(selectors.selectFetchingState));
-    this.$fetchingState.subscribe(fState => {
-      this.fetchingState = fState;
-    })
-    this.fetchingState = this.asyncPipe.transform(this.$fetchingState);
-    this.$fetchedDestinations = this.store.pipe(select(selectors.selectFetchedDestinations));
+    this.fetchingState$ = this.store.pipe(select(selectors.selectFetchingState));
+    this.fetchingState$.subscribe(fState => { this.fetchingState = fState;})
+    this.fetchingState = this.asyncPipe.transform(this.fetchingState$);
+    this.fetchedDestinations$ = this.store.pipe(select(selectors.selectFetchedDestinations));
   }
-
+  
   isFetching() {
     return this.fetchingState == FetchingState.FETCHING
   }

@@ -1,6 +1,6 @@
 import { ActionReducerMap, createAction, createReducer, createSelector, on, props, Store } from "@ngrx/store";
 import Suggestion from "../pojo/Suggestion";
-import { Actions, ofType, createEffect, Effect } from '@ngrx/effects';
+import { Actions, ofType, Effect } from '@ngrx/effects';
 import { map, mergeMap } from 'rxjs/operators';
 import { Injectable } from "@angular/core";
 import { HttpService } from "../http/http.service";

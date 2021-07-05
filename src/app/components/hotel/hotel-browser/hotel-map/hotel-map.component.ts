@@ -80,7 +80,8 @@ J
 
   addMarkers() {
     for (let location of this.destinations) {
-      this.addMarker(location.latitude, location.longitude);
+      if (location.longitude && location.latitude)
+        this.addMarker(location.latitude, location.longitude);
     }
   }
 
